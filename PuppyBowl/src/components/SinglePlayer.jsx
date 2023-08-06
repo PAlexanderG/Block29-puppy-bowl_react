@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function SinglePlayer({ player }) {
+  const [count, setCount] = useState(0);
+
   // const [state, setState] = useState(initialState);
   // console.log(player.name);
   return (
