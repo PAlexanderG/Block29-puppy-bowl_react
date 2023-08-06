@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchAllPlayers } from "../API/index.js";
 import SinglePlayer from "./SinglePlayer.jsx";
-import NewPlayerForm from "./NewPlayersForm.jsx";
+import NewPlayerForm from "../NewPlayersForm.jsx";
 
 export default function AllPlayers() {
   const [players, setPlayers] = useState([]);

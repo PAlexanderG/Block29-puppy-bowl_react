@@ -5,64 +5,42 @@ const baseUrl = `https://fsa-puppy-bowl.herokuapp.com/api/${COHORT}`;
 
 export async function fetchAllPlayers() {
   try {
-    const response = await fetch(`${baseUrl}/players`);
+    const response = await fetch(`${API_URL}/players`);
     const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
+    return result.data.players;
+  } catch (err) {
+    console.error(err);
   }
 }
 
-export async function fetchSinglePlayer() {
+export async function fetchPlayerById(id) {
   try {
-    const response = await fetch(`${baseUrl}/players/${playerId}`);
+    const response = await fetch(`${API_URL}/players/${id}`);
     const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
+    return result.data.player;
+  } catch (err) {
+    console.error(err);
   }
 }
 
-export async function createPlayer() {
+export async function createNewPlayer(player) {
   try {
-    const requestOption = {
+    const response = await fetch(`${API_URL}/players`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(playerObj),
-    };
-    const response = await fetch(`${baseUrl}/players`, requestOption);
+      body: JSON.stringify(player),
+    });
     const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
+    console.log(result);
+  } catch (err) {
+    console.error(err);
   }
 }
 
-export async function deletePlayer() {
-  try {
-    const requestOption = {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(playerObj),
-    };
-    const response = await fetch(`${baseUrl}/players`, requestOption);
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-export async function fetchTeams() {
-  try {
-    const response = await fetch(`${baseUrl}/COHORT/teams${playerId}`);
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
-  }
+export async function deletePlayer(id) {
+  await fetch(`${API_URL}/players/${id}`, {
+    method: "DELETE",
+  });
 }

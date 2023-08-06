@@ -1,9 +1,12 @@
-export default function NewPlayersForm({ player }) {
-  const [inputs, setInputs] = useState({});
+import { useState } from "react";
+import { createSinglePlayer } from "../API/index";
+
+export default function NewPlayersForm({ fetchAllPlayers }) {
+  const [inputs, setInputs] = useState("");
 
   const handleChange = (event) => {
     const name = event.target.name;
-    const value = event.target.id.value;
+    const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: id.value }));
   };
 
