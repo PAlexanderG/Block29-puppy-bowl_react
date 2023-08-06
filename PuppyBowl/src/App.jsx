@@ -2,8 +2,8 @@ import { BrowserRouter, useNavigate } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
 import "./index.css";
 import AllPlayers from "./components/AllPlayers";
-import SinglePlayer from "./components/SinglePlayer.jsx";
-import NewPlayerFor from "./components/NewPlayersForm";
+import SinglePlayer from "./components/SinglePlayer";
+import NewPlayerForm from "./components/NewPlayersForm";
 import NAvBAr from "./components/NavBar";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <div id="navbar">
           <Link to="/AllPlayers.jsx">All Players</Link>
           <Link to="/SinglePlayer.jsx">Single Player</Link>
-          <Link to="/NewPLayerFormContainer.jsx">Player Form</Link>
+          <Link to="/NewPLayerForm.jsx">Player Form</Link>
         </div>
         {/* replace it with the Routes component */}
         <div id="main-section"></div>

@@ -13,7 +13,7 @@ export async function fetchAllPlayers() {
   }
 }
 
-export async function fetchSinglePlayer(id) {
+export async function fetchSinglePlayer() {
   try {
     const response = await fetch(`${baseUrl}/players/${playerId}`);
     const result = await response.json();
@@ -23,7 +23,7 @@ export async function fetchSinglePlayer(id) {
   }
 }
 
-export async function createPlayer(name, breed, status) {
+export async function createPlayer() {
   try {
     const requestOption = {
       method: "POST",
@@ -33,6 +33,33 @@ export async function createPlayer(name, breed, status) {
       body: JSON.stringify(playerObj),
     };
     const response = await fetch(`${baseUrl}/players`, requestOption);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function deletePlayer() {
+  try {
+    const requestOption = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(playerObj),
+    };
+    const response = await fetch(`${baseUrl}/players`, requestOption);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function fetchTeams() {
+  try {
+    const response = await fetch(`${baseUrl}/COHORT/teams${playerId}`);
     const result = await response.json();
     return result;
   } catch (error) {

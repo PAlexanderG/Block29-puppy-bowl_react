@@ -35,6 +35,4 @@ export default function AllPlayers() {
   );
 }
 
-// playerList.forEach((player) => {
-//   const playerElement = document.createElement("div");
-//   playerElement.classList.add("player");
+
