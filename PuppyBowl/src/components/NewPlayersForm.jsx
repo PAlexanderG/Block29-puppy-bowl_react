@@ -7,7 +7,7 @@ export default function NewPlayersForm({ fetchAllPlayers }) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: id.value }));
+    setInputs((values) => ({ ...values, [name]: value }));
   };
 
   const handleSubmit = (event) => {
