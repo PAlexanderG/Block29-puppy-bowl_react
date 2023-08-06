@@ -17,34 +17,43 @@ export default function NewPlayersForm({ player }) {
       <label>
         Name:
         <input
-          type="text"
+          type="string"
           name="name"
-          value={inputs.name || ""}
+          value={inputs.string || ""}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Id:
+        <input
+          type="number"
+          name="name"
+          value={inputs.number || ""}
           onChange={handleChange}
         />
       </label>
       <label>
         Breed:
         <input
-          type="text"
+          type="string"
           name="breed"
-          value={inputs.breed || ""}
+          value={inputs.string || ""}
           onChange={handleChange}
         />
       </label>
       <label>
         Status:
         <input
-          type="text"
+          type="enum"
           name="status"
-          value={inputs.status || ""}
+          value={inputs.enum || ""}
           onChange={handleChange}
         />
       </label>
       <label>
         Image URL:
         <input
-          type="text"
+          type="string"
           name="imageUrl"
           value={inputs.imageUrl || ""}
           onChange={handleChange}
@@ -53,7 +62,7 @@ export default function NewPlayersForm({ player }) {
       <label>
         Created At:
         <input
-          type="text"
+          type="string"
           name="createdAt"
           value={inputs.createdAt || ""}
           onChange={handleChange}
@@ -62,9 +71,18 @@ export default function NewPlayersForm({ player }) {
       <label>
         Team ID:
         <input
-          type="text"
+          type="number"
           name="teamId"
-          value={inputs.teamId || ""}
+          value={inputs.number || ""}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Team ID:
+        <input
+          type="number"
+          name="cohortId"
+          value={inputs.number || ""}
           onChange={handleChange}
         />
       </label>

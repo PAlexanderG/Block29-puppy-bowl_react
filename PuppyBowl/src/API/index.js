@@ -25,7 +25,7 @@ export async function fetchSinglePlayer(id) {
 
 export async function createPlayer(name, breed, status) {
   try {
-    const response = await fetch(`${baseUrl}/players/${playerId}`);
+    const response = await fetch(`${baseUrl}/players`);
     const result = await response.json();
     return result;
   } catch (error) {
