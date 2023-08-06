@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchAllPlayers } from "../API/index.js";
 import SinglePlayer from "./SinglePlayer.jsx";
-import newPlayerFormContainer from "./NewPlayersForm.jsx";
+import NewPlayerForm from "./NewPlayersForm.jsx";
 
 export default function AllPlayers() {
   const [players, setPlayers] = useState([]);
@@ -21,7 +21,7 @@ export default function AllPlayers() {
       } else {
         setError(APIResponse.error.message);
       }
-      console.log(APIResponse.data.players);
+    //   console.log(APIResponse.data.players);
     }
     getAllPLayers();
   }, []);

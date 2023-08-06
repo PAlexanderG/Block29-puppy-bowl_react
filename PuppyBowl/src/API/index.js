@@ -13,9 +13,9 @@ export async function fetchAllPlayers() {
   }
 }
 
-export async function fetchSinglePlayers(id) {
+export async function fetchSinglePlayer(id) {
   try {
-    const response = await fetch(`${baseUrl}/players/${id}`);
+    const response = await fetch(`${baseUrl}/players/${playerId}`);
     const result = await response.json();
     return result;
   } catch (error) {
